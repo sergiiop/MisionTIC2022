@@ -1,0 +1,11 @@
+entero = int(input('ingrese un entero: '))
+flotante = float(input('Ingrese un numero flotante: '))
+boolean = bool(input('Ingrese un boolean,(dejar vacio en caso de false): '))
+caracter = input('Ingrese un caracter: ')
+cadena = input('Ingrese una cadena de caracteres: ')
+
+print(type(entero))
+print(type(flotante))
+print(type(boolean))
+print(type(caracter))
+print(type(cadena))
