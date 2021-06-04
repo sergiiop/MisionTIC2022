@@ -1,0 +1,6 @@
+1) Iniciar el programa
+2) Consultar la hora del día
+3) Si la hora esta entre las 4am y las 12am del día entonces imprimir "Buenos días"
+4) Si la hora esta entre la 1pm y las 6pm entonces imprimir "Buenas Tardes"
+5) Si la hora esta entre las 7pm y las 3am entonces imprimir "Buenas Noches"
+6) Finalizar Programa

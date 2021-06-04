@@ -1,0 +1,8 @@
+1) Inicio del programa.
+2) Declarar e inicializar el valor constante, SALDO.
+3) Solicitar el valor de la compra.
+4) Si el valor de la constante es mayor al de la  compra, proceder al calculo de la devuelta.
+4.1) Realizar el calculo de la devuelta con la formula SALDO -= valor_compra.
+4.2) Mostrar el nuevo saldo que equivale al valor devuelta.
+5) Si el valor de la constante es menor al de la compra, arrojar mensaje "Saldo Insuficiente"
+6) Finalizar el programa.
