@@ -27,8 +27,8 @@ def validation():
         return False
 
 
-def choose_favorite(menu_option):
-    pass
+# choose_favorite(menu_option):
+#    pass
 
 
 def run():
@@ -38,8 +38,7 @@ def run():
     print('Bienvenido al sistema de ubicación para zonas públicas WIFI')
     username = input('Ingrese su usuario: ')
 
-#    menu_option = ['Cambiar contraseña', 'Ingresar coordenadas actuales',
-#    'Ubicar zona wifi más cercana', 'Guardar archivo con ubicación cercana', 'Actualizar registros de zonas wifi desde archivo']
+    menu_option = ['Cambiar contraseña', 'Ingresar coordenadas actuales', 'Ubicar zona wifi más cercana', 'Guardar archivo con ubicación cercana', 'Actualizar registros de zonas wifi desde archivo']
     
     menu = f"""
     Bienvenido
@@ -81,7 +80,6 @@ def run():
                                 5 - Actualizar registros de zonas wifi desde archivo
                                 6 - Elegir opción de menú favorita
                                 7 - Cerrar sesión.
-                                Elija una opción: 
                                 """
                         elif option_fav == 3:
                             is_valid = validation()
@@ -96,7 +94,6 @@ def run():
                                 5 - Actualizar registros de zonas wifi desde archivo
                                 6 - Elegir opción de menú favorita
                                 7 - Cerrar sesión.
-                                Elija una opción: 
                                 """
                         elif option_fav == 4:
                             is_valid = validation()
@@ -111,23 +108,21 @@ def run():
                                 5 - Actualizar registros de zonas wifi desde archivo
                                 6 - Elegir opción de menú favorita
                                 7 - Cerrar sesión.
-                                Elija una opción: 
                                 """
                         elif option_fav == 5:
-                              is_valid = validation()
-                              if is_valid:
-                                  system("cls")
-                                  menu = """
-                                  Bienvenido
-                                  1 - Actualizar registros de zonas wifi desde archivo 
-                                  2 - Cambiar contraseña
-                                  3 - Ingresar coordenadas actuales
-                                  4 - Ubicar zona wifi más cercana
-                                  5 - Guardar archivo con ubicación cercana
-                                  6 - Elegir opción de menú favorita
-                                  7 - Cerrar sesión.
-                                  Elija una opción: 
-                                  """
+                            is_valid = validation()
+                            if is_valid:
+                                system("cls")
+                                menu = """
+                                Bienvenido
+                                1 - Actualizar registros de zonas wifi desde archivo 
+                                2 - Cambiar contraseña
+                                3 - Ingresar coordenadas actuales
+                                4 - Ubicar zona wifi más cercana
+                                5 - Guardar archivo con ubicación cercana
+                                6 - Elegir opción de menú favorita
+                                7 - Cerrar sesión. 
+                                """
                         else:
                             print('Error')
                             break
