@@ -1,5 +1,6 @@
 from os import system
 
+
 def captcha(cod):
     # 51604
     first_term = int(cod[2:])  # 610
@@ -26,9 +27,21 @@ def validation():
         print('Error')
         return False
 
-
-# choose_favorite(menu_option):
-#    pass
+def choose_favorite(menu_option, option_fav):
+    option_new_fav = menu_option[option_fav-1]
+    menu_option.remove(option_new_fav)
+    menu_option.insert(0, option_new_fav)
+    new_menu = f"""
+    Bienvenido
+    1 - {menu_option[0]} 
+    2 - {menu_option[1]}
+    3 - {menu_option[2]}
+    4 - {menu_option[3]}
+    5 - {menu_option[4]}
+    6 - Elegir opción de menú favorita
+    7 - Cerrar sesión.
+    """
+    return new_menu
 
 
 def run():
@@ -38,15 +51,16 @@ def run():
     print('Bienvenido al sistema de ubicación para zonas públicas WIFI')
     username = input('Ingrese su usuario: ')
 
-    menu_option = ['Cambiar contraseña', 'Ingresar coordenadas actuales', 'Ubicar zona wifi más cercana', 'Guardar archivo con ubicación cercana', 'Actualizar registros de zonas wifi desde archivo']
-    
+    menu_option = ['Cambiar contraseña', 'Ingresar coordenadas actuales', 'Ubicar zona wifi más cercana',
+                   'Guardar archivo con ubicación cercana', 'Actualizar registros de zonas wifi desde archivo']
+
     menu = f"""
     Bienvenido
-    1 - Cambiar contraseña 
-    2 - Ingresar coordenadas actuales
-    3 - Ubicar zona wifi más cercana
-    4 - Guardar archivo con ubicación cercana
-    5 - Actualizar registros de zonas wifi desde archivo
+    1 - {menu_option[0]} 
+    2 - {menu_option[1]}
+    3 - {menu_option[2]}
+    4 - {menu_option[3]}
+    5 - {menu_option[4]}
     6 - Elegir opción de menú favorita
     7 - Cerrar sesión.
     """
@@ -64,71 +78,42 @@ def run():
                         option_fav = int(input('Elija una opción: '))
                         if option_fav == 1:
                             is_valid = validation()
-                            if is_valid :
+                            if is_valid:
                                 system("cls")
                                 menu = menu
                         elif option_fav == 2:
                             is_valid = validation()
                             if is_valid:
                                 system("cls")
-                                menu = """
-                                Bienvenido
-                                1 - Ingresar coordenadas actuales
-                                2 - Cambiar contraseña
-                                3 - Ubicar zona wifi más cercana
-                                4 - Guardar archivo con ubicación cercana
-                                5 - Actualizar registros de zonas wifi desde archivo
-                                6 - Elegir opción de menú favorita
-                                7 - Cerrar sesión.
-                                """
+                                new_option = choose_favorite(
+                                    menu_option, option_fav)
+                                menu = new_option
                         elif option_fav == 3:
                             is_valid = validation()
                             if is_valid:
                                 system("cls")
-                                menu = """
-                                Bienvenido
-                                1 - Ubicar zona wifi más cercana
-                                2 - Cambiar contraseña
-                                3 - Ingresar coordenadas actuales
-                                4 - Guardar archivo con ubicación cercana
-                                5 - Actualizar registros de zonas wifi desde archivo
-                                6 - Elegir opción de menú favorita
-                                7 - Cerrar sesión.
-                                """
+                                new_option = choose_favorite(
+                                    menu_option, option_fav)
+                                menu = new_option
                         elif option_fav == 4:
                             is_valid = validation()
                             if is_valid:
                                 system("cls")
-                                menu = """
-                                Bienvenido
-                                1 - Guardar archivo con ubicación cercana 
-                                2 - Cambiar contraseña
-                                3 - Ingresar coordenadas actuales
-                                4 - Ubicar zona wifi más cercana
-                                5 - Actualizar registros de zonas wifi desde archivo
-                                6 - Elegir opción de menú favorita
-                                7 - Cerrar sesión.
-                                """
+                                new_option = choose_favorite(
+                                    menu_option, option_fav)
+                                menu = new_option
                         elif option_fav == 5:
                             is_valid = validation()
                             if is_valid:
                                 system("cls")
-                                menu = """
-                                Bienvenido
-                                1 - Actualizar registros de zonas wifi desde archivo 
-                                2 - Cambiar contraseña
-                                3 - Ingresar coordenadas actuales
-                                4 - Ubicar zona wifi más cercana
-                                5 - Guardar archivo con ubicación cercana
-                                6 - Elegir opción de menú favorita
-                                7 - Cerrar sesión. 
-                                """
+                                new_option = choose_favorite(
+                                    menu_option, option_fav)
+                                menu = new_option
                         else:
                             print('Error')
                             break
                     elif option == 1:
                         print('Usted ha elegido la opción 1')
-                        break
                     elif option == 2:
                         print('Usted ha elegido la opción 2')
                         break
