@@ -9,9 +9,11 @@ public class Notas {
         nota_3 = Float.parseFloat(JOptionPane.showInputDialog("Ingrese la tercera nota"));
         nota_definitiva = (nota_1 + nota_2 + nota_3) / 3;
         if(nota_definitiva >= 3){
-            JOptionPane.showMessageDialog(null,"La nota definitiva es: "+nota_definitiva+", el estudiante gana la materia");
+            JOptionPane.showMessageDialog(null,"Primera Nota: "+nota_1+"\nSegunda Nota: "+nota_2+"\nTercera Nota: "+nota_3+"\n" +
+                    "La nota definitiva es: "+nota_definitiva+", el estudiante gana la materia");
         }else{
-            JOptionPane.showMessageDialog(null,"La nota definitiva es: "+nota_definitiva+", el estudiante pierde la materia");
+            JOptionPane.showMessageDialog(null,"Primera Nota: "+nota_1+"\nSegunda Nota: "+nota_2+"\nTercera Nota: "+nota_3+"\n" +
+                    "La nota definitiva es: "+nota_definitiva+", el estudiante pierde la materia");
         }
     }
 }
