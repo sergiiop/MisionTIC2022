@@ -54,24 +54,32 @@ public class Empleado {
     }
 
     public static double calcularMiNomina(Empleado empleado){
-        double AUTO_TIPO_1, AUTO_TIPO_2,AUTO_TIPO_3, bono = 0,total = 0,deducciones;
+        double total = 0,deductions, commission;
+
+        commission = calcularMiComision(empleado);
+        System.out.println(commission);
+        System.out.println(empleado.getSalario());
+        total = empleado.getSalario()+commission;
+        deductions = total * 0.08;
+        total -= deductions;
+        return total;
+    }
+
+    public static int calcularMiComision(Empleado empleado){
+        int AUTO_TIPO_1, AUTO_TIPO_2,AUTO_TIPO_3, comision = 0;
         AUTO_TIPO_1 = 750000;
         AUTO_TIPO_2 = 500000;
         AUTO_TIPO_3 = 350000;
 
         for(int i= 0;i < empleado.getAutos().size();i++ ){
-            if(empleado.getAutos().get(i).getTipo() == 1){
-                bono += AUTO_TIPO_1;
-            }else if(empleado.getAutos().get(i).getTipo() == 2){
-                bono += AUTO_TIPO_2;
+            if(empleado.getAutos().get(i).getTipo() == 1) {
+                comision += AUTO_TIPO_1;
+            }else if(empleado.getAutos().get(i).getTipo() == 2) {
+                comision += AUTO_TIPO_2;
             }else if(empleado.getAutos().get(i).getTipo() == 3){
-                bono += AUTO_TIPO_3;
+                comision += AUTO_TIPO_3;
             }
         }
-        total = empleado.getSalario()+bono;
-        deducciones = total * 0.08;
-        total -= deducciones;
-        System.out.println(total);
-        return total;
+        return comision;
     }
 }
